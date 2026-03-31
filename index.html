@@ -9,92 +9,119 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="app">
-    <div class="header glass">
-      <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start; flex-wrap:wrap;">
-        <div>
-          <h1 class="title" id="appTitle">ReviseFlow</h1>
-          <div class="subtitle" id="appSubtitle">Daily checklist and calendar.</div>
+  <div id="authView" class="app">
+    <div class="authShell">
+      <div class="glass section">
+        <h1 class="title" style="margin-bottom:6px;">ReviseFlow</h1>
+        <div class="subtitle">Sign in to sync your revision progress across devices.</div>
+        <div class="inputRow">
+          <input id="emailInput" class="input" type="email" placeholder="Email">
+          <input id="passwordInput" class="input" type="password" placeholder="Password">
         </div>
-        <button id="installBtn" class="primary" style="display:none;">Install</button>
-      </div>
-      <div class="topActions">
-        <button id="todayBtn" class="small">Today</button>
-        <button id="prevDayBtn" class="small">Previous day</button>
-        <button id="nextDayBtn" class="small">Next day</button>
-        <button id="resetBtn" class="small">Reset ticks</button>
-      </div>
-    </div>
-
-    <div id="homePage" class="page active">
-      <div class="hero glass">
-        <div class="heroDate" id="homeDateTag"></div>
-        <div class="heroHeading" id="homeDateTitle"></div>
-        <div class="heroMeta" id="homeMeta"></div>
-        <div class="progressWrap">
-          <div class="progressLabel" id="progressText"></div>
-          <div class="progressBar"><div class="progressFill" id="progressFill"></div></div>
+        <div class="authActions">
+          <button id="signUpBtn" class="primary">Create account</button>
+          <button id="signInBtn">Sign in</button>
+          <button id="guestBtn" class="small">Continue signed out</button>
         </div>
-        <div class="dateNav">
-          <button id="homePrevBtn" class="small">← Earlier</button>
-          <button id="homeNextBtn" class="small">Later →</button>
-        </div>
-        <div class="notice">Version 4 is split into separate files so future updates are easier: <code>schedule.json</code>, <code>resources.json</code>, <code>settings.json</code>, <code>styles.css</code>, and <code>app.js</code>.</div>
-      </div>
-
-      <div class="split">
-        <div>
-          <div class="section glass">
-            <h2>Today’s 4 tasks</h2>
-            <div class="small">Your day-to-day checklist updates automatically as the date changes.</div>
-            <div id="todayTasks"></div>
-          </div>
-        </div>
-        <div>
-          <div class="section glass">
-            <h2>Carry-over</h2>
-            <div class="small">Anything unfinished from earlier days stays here until you tick it off.</div>
-            <div id="carryTasks"></div>
-          </div>
-
-          <div class="section glass">
-            <h2>Useful links</h2>
-            <div class="small">Quick access to your revision resources.</div>
-            <div id="linksBox"></div>
-          </div>
-        </div>
+        <div id="authMessage" class="notice" style="display:none;"></div>
       </div>
     </div>
-
-    <div id="calendarPage" class="page">
-      <div class="section glass">
-        <div class="calendarHeader">
-          <button id="prevMonthBtn" class="small">←</button>
-          <div class="monthTitle" id="monthTitle"></div>
-          <button id="nextMonthBtn" class="small">→</button>
-        </div>
-        <div class="weekdayRow">
-          <div class="weekday">Mon</div><div class="weekday">Tue</div><div class="weekday">Wed</div><div class="weekday">Thu</div><div class="weekday">Fri</div><div class="weekday">Sat</div><div class="weekday">Sun</div>
-        </div>
-        <div class="calendarGrid" id="calendarGrid"></div>
-      </div>
-
-      <div class="section glass">
-        <h2 id="selectedDateTitle">Selected date</h2>
-        <div class="small">Tap a date above to see the full task list for that day.</div>
-        <div id="selectedExamPills" class="heroMeta" style="margin-top:12px;"></div>
-        <div id="selectedTasks"></div>
-      </div>
-    </div>
-
-    <div class="footerNote">Next product step: accounts, AI planner, manual “I revised this instead” logging, and multi-user analytics require a backend, not just GitHub Pages.</div>
   </div>
 
-  <div class="bottomNav">
-    <button class="tabBtn active" id="homeTabBtn">Home</button>
-    <button class="tabBtn" id="calendarTabBtn">Calendar</button>
+  <div id="appView" class="hidden">
+    <div class="app">
+      <div class="header glass">
+        <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start; flex-wrap:wrap;">
+          <div>
+            <h1 class="title" id="appTitle">ReviseFlow</h1>
+            <div class="subtitle" id="appSubtitle">Daily checklist and calendar.</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+              <span id="syncStatus" class="statusPill">Local mode</span>
+              <span id="userStatus" class="statusPill">Signed out</span>
+            </div>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button id="installBtn" class="primary" style="display:none;">Install</button>
+            <button id="logoutBtn" class="small hidden">Log out</button>
+          </div>
+        </div>
+        <div class="topActions">
+          <button id="todayBtn" class="small">Today</button>
+          <button id="prevDayBtn" class="small">Previous day</button>
+          <button id="nextDayBtn" class="small">Next day</button>
+          <button id="resetBtn" class="small">Reset ticks</button>
+        </div>
+      </div>
+
+      <div id="homePage" class="page active">
+        <div class="hero glass">
+          <div class="heroDate" id="homeDateTag"></div>
+          <div class="heroHeading" id="homeDateTitle"></div>
+          <div class="heroMeta" id="homeMeta"></div>
+          <div class="progressWrap">
+            <div class="progressLabel" id="progressText"></div>
+            <div class="progressBar"><div class="progressFill" id="progressFill"></div></div>
+          </div>
+          <div class="dateNav">
+            <button id="homePrevBtn" class="small">← Earlier</button>
+            <button id="homeNextBtn" class="small">Later →</button>
+          </div>
+          <div class="notice">Version 5 adds Supabase login and cloud sync for completed tasks.</div>
+        </div>
+
+        <div class="split">
+          <div>
+            <div class="section glass">
+              <h2>Today’s 4 tasks</h2>
+              <div class="small">Your day-to-day checklist updates automatically as the date changes.</div>
+              <div id="todayTasks"></div>
+            </div>
+          </div>
+          <div>
+            <div class="section glass">
+              <h2>Carry-over</h2>
+              <div class="small">Anything unfinished from earlier days stays here until you tick it off.</div>
+              <div id="carryTasks"></div>
+            </div>
+
+            <div class="section glass">
+              <h2>Useful links</h2>
+              <div class="small">Quick access to your revision resources.</div>
+              <div id="linksBox"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="calendarPage" class="page">
+        <div class="section glass">
+          <div class="calendarHeader">
+            <button id="prevMonthBtn" class="small">←</button>
+            <div class="monthTitle" id="monthTitle"></div>
+            <button id="nextMonthBtn" class="small">→</button>
+          </div>
+          <div class="weekdayRow">
+            <div class="weekday">Mon</div><div class="weekday">Tue</div><div class="weekday">Wed</div><div class="weekday">Thu</div><div class="weekday">Fri</div><div class="weekday">Sat</div><div class="weekday">Sun</div>
+          </div>
+          <div class="calendarGrid" id="calendarGrid"></div>
+        </div>
+
+        <div class="section glass">
+          <h2 id="selectedDateTitle">Selected date</h2>
+          <div class="small">Tap a date above to see the full task list for that day.</div>
+          <div id="selectedExamPills" class="heroMeta" style="margin-top:12px;"></div>
+          <div id="selectedTasks"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottomNav">
+      <button class="tabBtn active" id="homeTabBtn">Home</button>
+      <button class="tabBtn" id="calendarTabBtn">Calendar</button>
+    </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./app.js"></script>
 </body>
 </html>

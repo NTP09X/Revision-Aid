@@ -117,5 +117,11 @@
         "title": "Exam \u2014 Combined Science"
       }
     ]
+  },
+  "supabaseUrl": "https://rnsjarpswfnekabovcvb.supabase.co",
+  "supabaseAnonKey": "sb_publishable_JQcnWZ8NWquCqyOzqXnJqw_0cVbzcLs",
+  "features": {
+    "auth": true,
+    "cloudSync": true
   }
 }
