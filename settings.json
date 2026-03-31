@@ -1,0 +1,121 @@
+{
+  "appName": "ReviseFlow",
+  "tagline": "Dark calendar + daily checklist. Unticked tasks carry over automatically.",
+  "themeColor": "#0a0a0b",
+  "startDate": "2026-03-29",
+  "endDate": "2026-06-15",
+  "brandDomainSuggestion": "reviseflow.app",
+  "customDomainPlaceholder": "reviseflow.app",
+  "exams": {
+    "2026-05-11": [
+      {
+        "subject": "English Literature",
+        "title": "Exam \u2014 English Literature Paper 1"
+      }
+    ],
+    "2026-05-12": [
+      {
+        "subject": "RS",
+        "title": "Exam \u2014 RS Paper 1"
+      },
+      {
+        "subject": "Science",
+        "title": "Exam \u2014 Combined Science"
+      }
+    ],
+    "2026-05-14": [
+      {
+        "subject": "Maths",
+        "title": "Exam \u2014 Maths Paper 1"
+      }
+    ],
+    "2026-05-15": [
+      {
+        "subject": "History",
+        "title": "Exam \u2014 History Paper 1"
+      }
+    ],
+    "2026-05-18": [
+      {
+        "subject": "Science",
+        "title": "Exam \u2014 Combined Science"
+      }
+    ],
+    "2026-05-20": [
+      {
+        "subject": "English Literature",
+        "title": "Exam \u2014 English Literature Paper 2"
+      }
+    ],
+    "2026-05-21": [
+      {
+        "subject": "RS",
+        "title": "Exam \u2014 RS Paper 2"
+      }
+    ],
+    "2026-05-22": [
+      {
+        "subject": "English Language",
+        "title": "Exam \u2014 English Language Paper 1"
+      }
+    ],
+    "2026-06-01": [
+      {
+        "subject": "PE",
+        "title": "Exam \u2014 PE Paper 1"
+      }
+    ],
+    "2026-06-02": [
+      {
+        "subject": "PE",
+        "title": "Exam \u2014 PE Paper 2"
+      }
+    ],
+    "2026-06-03": [
+      {
+        "subject": "Maths",
+        "title": "Exam \u2014 Maths Paper 2"
+      }
+    ],
+    "2026-06-04": [
+      {
+        "subject": "History",
+        "title": "Exam \u2014 History Paper 2"
+      }
+    ],
+    "2026-06-05": [
+      {
+        "subject": "English Language",
+        "title": "Exam \u2014 English Language Paper 2"
+      },
+      {
+        "subject": "Music",
+        "title": "Exam \u2014 Music Listening / Appraising"
+      }
+    ],
+    "2026-06-08": [
+      {
+        "subject": "Science",
+        "title": "Exam \u2014 Combined Science"
+      }
+    ],
+    "2026-06-10": [
+      {
+        "subject": "Maths",
+        "title": "Exam \u2014 Maths Paper 3"
+      }
+    ],
+    "2026-06-12": [
+      {
+        "subject": "Science",
+        "title": "Exam \u2014 Combined Science"
+      }
+    ],
+    "2026-06-15": [
+      {
+        "subject": "Science",
+        "title": "Exam \u2014 Combined Science"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "AQA RS",
+    "label": "Your RS website",
+    "url": "https://thersteacher.com/"
+  },
+  {
+    "name": "AQA Maths",
+    "label": "Past papers / revision",
+    "url": "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/mathematics-2015.html"
+  },
+  {
+    "name": "AQA Science",
+    "label": "Combined Science spec",
+    "url": "https://www.aqa.org.uk/subjects/science/gcse/science-8464/specification"
+  },
+  {
+    "name": "AQA PE",
+    "label": "PE specification",
+    "url": "https://www.aqa.org.uk/subjects/physical-education/gcse/physical-education-8582/specification/specification-at-a-glance"
+  },
+  {
+    "name": "WJEC Music",
+    "label": "Music specification",
+    "url": "https://www.wjec.co.uk/qualifications/music-gcse/"
+  }
+]
